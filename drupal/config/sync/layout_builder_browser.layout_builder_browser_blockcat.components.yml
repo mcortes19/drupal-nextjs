@@ -1,0 +1,7 @@
+uuid: cb45b99a-be44-4bbc-9f4b-0944e6f2c721
+langcode: en
+status: true
+dependencies: {  }
+id: components
+label: Components
+weight: null
