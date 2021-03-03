@@ -21,12 +21,12 @@ function manati_landing_pages_node_update(EntityInterface $node) {
     $block_ids = [];
     foreach($node->layout_builder__layout->getSections() as $section) {
       foreach($section->getComponents() as $component) {
+        $block = \Drupal::entityTypeManager()->getStorage('block_content')->loadRevision($component->get('configuration')['block_revision_id']);
         array_push($block_ids, [
-          'target_id' => $component->get('configuration')['block_revision_id'],
+          'target_id' => $block->id(),
         ]);
       }
     }
-    dump($block_ids);
     $node->field_blocks = $block_ids;
     drupal_register_shutdown_function('_manati_landing_pages_post_update', $node);
   }
