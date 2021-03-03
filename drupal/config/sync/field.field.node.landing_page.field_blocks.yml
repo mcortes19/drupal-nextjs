@@ -1,0 +1,25 @@
+uuid: 2879768e-969f-4ed4-b050-d3762c5e6760
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blocks
+    - node.type.landing_page
+id: node.landing_page.field_blocks
+field_name: field_blocks
+entity_type: node
+bundle: landing_page
+label: Blocks
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: non_reusable_blocks
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference
